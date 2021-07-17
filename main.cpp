@@ -4,7 +4,7 @@
 
 #include <string.h>
 #include <cstdlib>
-#include "gen.h"
+#include "rsa-gen/gen.h"
 
 using namespace std;
 
