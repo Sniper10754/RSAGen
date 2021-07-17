@@ -8,7 +8,7 @@
 
 using namespace std;
 
-    namespace rsa_gen {
+namespace rsa_gen {
 
     string encrypt(string textp, int keyp) {
         string text;
