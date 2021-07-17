@@ -6,9 +6,7 @@
 #include <stdio.h>
 #include <time.h>
 
-
 using namespace std;
-
 
 string encrypt(string textp, int keyp) {
     string text;
