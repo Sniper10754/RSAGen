@@ -18,7 +18,6 @@ namespace rsa_gen {
         text = textp;
         for(i = 0; text[i] != '\0'; ++i) {
             temp = text[i];
-            //If the message to be encypted is in lower case
             if(temp >= 'a' && temp <= 'z'){
                 temp = temp + key;
 
@@ -28,7 +27,6 @@ namespace rsa_gen {
 
                 text[i] = temp;
             }
-            //If the message to be encypted is in upper case
             else if(temp >= 'A' && temp <= 'Z'){
                 temp = temp + key;
 
