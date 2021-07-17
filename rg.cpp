@@ -1,20 +1,30 @@
 #include<iostream>
 #include<conio.h>
 #include<stdlib.h>
+#include <cstdint>
+#include <vector>
+#include <random>
+
+
+
+
+
+
 using namespace std;
 int main(int argc, char **argv) {
-   int max_n = 100;
-   int min_n = 1;
-   char Hexadec_n[100];
-   int new_n;
-   int i;
-   for (i = 0; i < 5; i++) {
-      new_n = ((rand() % (max_n + 1 - min_n)) + min_n);
-      //rand() returns random decimal number.
-      cout<<"The random number is: "<<new_n;
-      itoa(new_n, Hexadec_n, 16); //converts decimal number to Hexadecimal number.
-      cout << "\nEquivalent Hex Byte: "
-      <<Hexadec_n<<endl<<"\n";
-   }
-   return 0;
+    std::random_device rd;
+    std::uniform_int_distribution<uint32_t> dist(0,0xFFFFFFFFu);
+    std::vector<char> data(1000);
+    int offset = 0;
+    uint32_t bits = 0;
+    for (char& d : data)
+    {
+        if (offset == 0)
+            bits = dist(rd);
+        d = static_cast<char>(bits & 0xFF);
+        bits >>= 8;
+        if (++offset >= 4)
+            offset = 0;
+    }
+    return 0;
 }
