@@ -9,5 +9,5 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-    cout << key();
+    cout << rsa_gen::key();
 }
