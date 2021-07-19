@@ -8,7 +8,7 @@
 
 int main() {
 	std::string key = rsa_gen::key();
-    std::cout << key;
+	std::cout << key;
 
 	return 0;
 }
