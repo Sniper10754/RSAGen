@@ -6,8 +6,9 @@
 #include <cstdlib>
 #include "rsa-gen/gen.h"
 
-using namespace std;
+int main() {
+	std::string key = rsa_gen::key();
+    std::cout << key;
 
-int main(int argc, char **argv) {
-    cout << rsa_gen::key();
+	return 0;
 }
