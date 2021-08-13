@@ -1,14 +1,15 @@
 #include<iostream>
-#include<conio.h>
-#include<stdlib.h>
-
-#include <string.h>
-#include <cstdlib>
 #include "rsa-gen/gen.h"
 
-int main() {
-	std::string key = rsa_gen::key();
-	std::cout << key;
+using namespace std;
+using namespace rsa_gen;
 
+int main() {
+	try {
+		string k = key();
+		cout << k;
+	} catch(const std::exception& e) {
+		return 1;
+	}
 	return 0;
 }
